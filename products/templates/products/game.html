@@ -1,0 +1,30 @@
+{% extends 'products/header.html' %} {% block body %}
+<div class="container">
+    <h2>Striped Rows</h2>
+    <p>The .table-striped class adds zebra-stripes to a table:</p>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <button name="1" class="col-md-1 tic" value="1">1</button>&nbsp;
+                <button name="2" class="col-md-1 tic" value="2">2</button>&nbsp;
+                <button name="3" class="col-md-1 tic" value="3">3</button>&nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <button name="4" class="col-md-1 tic" value="4">4</button>&nbsp;
+                <button name="5" class="col-md-1 tic" value="5">5</button>&nbsp;
+                <button name="6" class="col-md-1 tic" value="6">6</button>&nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <button name="7" class="col-md-1 tic" value="7">7</button>&nbsp;
+                <button name="8" class="col-md-1 tic" value="8">8</button>&nbsp;
+                <button name="9" class="col-md-1 tic" value="9">9</button>&nbsp;
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

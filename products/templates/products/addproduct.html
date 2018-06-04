@@ -1,0 +1,31 @@
+{% extends 'products/header.html'%} {% block body %}
+<div class="container">
+    <div class="col-md-7">
+        <h2>Vertical (basic) form</h2>
+        {% if products %}
+        <form method="POST">
+            {% else %}
+            <form method="POST">
+                {% endif %} {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="hidden" class="form-control" id="proid" name="proid" value="{{ products.id }}">
+                    <input type="text" class="form-control" id="name" placeholder="Enter name" name="proname" value="{{ products.product_name }}">
+                </div>
+                <div class="form-group">
+                    <label for="type">Type:</label>
+                    <input type="text" class="form-control" id="type" placeholder="Enter type" name="protype" value="{{ products.product_type }}">
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" class="form-control" id="quantity" placeholder="Enter quantity" name="proquantity" value="{{ products.quantity }}">
+                </div>
+                {% if products %}
+                <button type="button" id="editsubmit" class="btn btn-default">Submit</button>
+                {% else %}
+                <button type="button" id="submit" class="btn btn-default">Submit</button>
+                {% endif %}
+            </form>
+    </div>
+</div>
+{% endblock %}
